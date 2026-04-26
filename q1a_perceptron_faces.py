@@ -40,8 +40,10 @@ class PerceptronFacesClassifier:
         `max_iterations` is the number of full passes over the training
         set during `train`.
         """
-        # TODO: initialize self.weights (shape: rows x cols) and self.bias.
-        raise NotImplementedError
+        # total pixels = 70 * 60 = 4200
+        self.max_iterations = max_iterations
+        self.weights = np.zeros(image_shape[0] * image_shape[1], dtype=np.float32)
+        self.bias = 0.0
 
     def train(self, training_images: np.ndarray, training_labels: np.ndarray) -> None:
         """Fit the perceptron on training data.
@@ -49,18 +51,41 @@ class PerceptronFacesClassifier:
         `training_images` has shape (N, 70, 60). `training_labels` has
         shape (N,) with values in {0, 1}.
         """
-        # TODO: implement the binary perceptron update rule.
-        raise NotImplementedError
+        flat_images = training_images.reshape(training_images.shape[0], -1)
+
+        for _ in range(self.max_iterations):
+            for x, label in zip(flat_images, training_labels):
+
+                score = np.dot(self.weights, x) + self.bias
+
+                if score >= 0:
+                    prediction = 1
+                else:
+                    prediction = 0
+
+                if prediction != label:
+                    self.weights += (label - prediction) * x
+                    self.bias += (label - prediction)
 
     def predict(self, image: np.ndarray) -> int:
         """Predict 0 or 1 for a single 70x60 image."""
-        # TODO: return 1 if w . x + b >= 0 else 0.
-        raise NotImplementedError
+        x = image.reshape(-1)
+        score = np.dot(self.weights, x) + self.bias
+
+        if score >= 0:
+            return 1
+        else:
+            return 0
 
     def evaluate(self, images: np.ndarray, labels: np.ndarray) -> float:
         """Return classification accuracy in [0, 1] over a batch."""
-        # TODO: loop over images, call self.predict, compare with labels.
-        raise NotImplementedError
+        correct = 0
+
+        for image, label in zip(images, labels):
+            if self.predict(image) == label:
+                correct += 1
+
+        return correct / len(labels)
 
 
 def main(training_percent: int, num_iterations: int = 5) -> dict:
