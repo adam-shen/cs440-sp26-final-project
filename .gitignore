@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+# Ignore the following files if they exist, but don't delete them from the repo:

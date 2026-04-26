@@ -42,9 +42,11 @@ class PerceptronDigitsClassifier:
         the weight tensor. `max_iterations` is the number of full
         passes over the training set during `train`.
         """
-        # TODO: initialize self.weights (shape: num_classes x rows x cols
-        # or num_classes x rows*cols) and self.biases (shape: num_classes).
-        raise NotImplementedError
+        self.num_classes = num_classes
+        self.image_shape = image_shape
+        self.max_iterations = max_iterations
+        self.weights = np.zeros((num_classes, image_shape[0] * image_shape[1]),dtype=np.float32)
+        self.biases = np.zeros(num_classes, dtype=np.float32)
 
     def train(self, training_images: np.ndarray, training_labels: np.ndarray) -> None:
         """Fit the perceptron on training data.
@@ -52,20 +54,32 @@ class PerceptronDigitsClassifier:
         `training_images` has shape (N, 28, 28). `training_labels` has
         shape (N,) with values in {0..9}.
         """
-        # TODO: for each epoch and each example, compute class scores,
-        # find argmax, and (if wrong) update the true class and the
-        # mispredicted class weights and biases.
-        raise NotImplementedError
+        flat_images = training_images.reshape(training_images.shape[0], -1).astype(
+            np.float32, copy=False
+        )
+        labels = training_labels.astype(np.int64, copy=False)
+
+        for _ in range(self.max_iterations):
+            for x, true_label in zip(flat_images, labels):
+                predicted = int(np.argmax(self.weights @ x + self.biases))
+                if predicted != true_label:
+                    self.weights[true_label] += x
+                    self.weights[predicted] -= x
+                    self.biases[true_label] += 1.0
+                    self.biases[predicted] -= 1.0
 
     def predict(self, image: np.ndarray) -> int:
         """Predict a label in {0..9} for a single 28x28 image."""
-        # TODO: compute w_y . x + b_y for every class and return argmax.
-        raise NotImplementedError
+        x = image.reshape(-1).astype(np.float32, copy=False)
+        return int(np.argmax(self.weights @ x + self.biases))
 
     def evaluate(self, images: np.ndarray, labels: np.ndarray) -> float:
         """Return classification accuracy in [0, 1] over a batch."""
-        # TODO: loop over images, call self.predict, compare with labels.
-        raise NotImplementedError
+        correct = 0
+        for image, label in zip(images, labels):
+            if self.predict(image) == label:
+                correct += 1
+        return correct / len(labels)
 
 
 def main(training_percent: int, num_iterations: int = 5) -> dict:
