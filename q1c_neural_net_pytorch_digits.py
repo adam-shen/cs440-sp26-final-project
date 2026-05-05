@@ -11,7 +11,7 @@ Required public API (fixed for auto grading):
     `evaluate`.
   * `main(training_percent: int, num_iterations: int = 5)`.
 
-Usage: 
+Usage:
     python3 q1c_neural_net_pytorch_digits.py <training_percent>
 """
 
