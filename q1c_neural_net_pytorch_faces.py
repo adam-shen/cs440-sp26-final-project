@@ -13,7 +13,7 @@ Required public API (fixed for auto grading):
 
 Usage:
     python3 q1c_neural_net_pytorch_faces.py <training_percent>
-"""
+""" 
 
 import sys
 import time
