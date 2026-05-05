@@ -41,13 +41,16 @@ class PyTorchNeuralNetworkFaces(nn.Module):
                  output_size: int = 2):
         """Construct `nn.Linear` and activation modules for each layer."""
         super().__init__()
-        # TODO: define self.fc1, self.fc2, self.fc3 and an activation.
-        raise NotImplementedError
+        self.fc1 = nn.Linear(input_size, hidden1_size)
+        self.fc2 = nn.Linear(hidden1_size, hidden2_size)
+        self.fc3 = nn.Linear(hidden2_size, output_size)
+        self.activation = nn.ReLU()
 
     def forward(self, x: "torch.Tensor") -> "torch.Tensor":
         """Forward pass returning raw logits of shape (N, 2)."""
-        # TODO: return self.fc3(act(self.fc2(act(self.fc1(x)))))
-        raise NotImplementedError
+        x = self.activation(self.fc1(x))
+        x = self.activation(self.fc2(x))
+        return self.fc3(x)
 
 
 class PyTorchFacesClassifier:
@@ -63,27 +66,60 @@ class PyTorchFacesClassifier:
         device: str | None = None,
     ):
         """Build the module, the loss, and the optimiser."""
-        # TODO:
-        # self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
-        # self.model = PyTorchNeuralNetworkFaces(...).to(self.device)
-        # self.criterion = nn.CrossEntropyLoss()
-        # self.optimizer = optim.Adam(self.model.parameters(), lr=learning_rate)
-        raise NotImplementedError
+        self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
+        self.model = PyTorchNeuralNetworkFaces(
+            hidden1_size=hidden1_size,
+            hidden2_size=hidden2_size,
+        ).to(self.device)
+        self.criterion = nn.CrossEntropyLoss()
+        self.optimizer = optim.Adam(self.model.parameters(), lr=learning_rate)
+        self.num_epochs = num_epochs
+        self.batch_size = batch_size
 
     def train(self, training_images: np.ndarray, training_labels: np.ndarray) -> None:
         """Fit the PyTorch model on the provided training data."""
-        # TODO: convert numpy to tensors, DataLoader, loop over epochs.
-        raise NotImplementedError
+        flattened = flatten_images(training_images).astype(np.float32, copy=False)
+        labels = training_labels.astype(np.int64, copy=False)
+
+        x_tensor = torch.from_numpy(flattened)
+        y_tensor = torch.from_numpy(labels)
+        dataset = TensorDataset(x_tensor, y_tensor)
+        loader = DataLoader(dataset, batch_size=self.batch_size, shuffle=True)
+
+        self.model.train()
+        for _ in range(self.num_epochs):
+            for batch_x, batch_y in loader:
+                batch_x = batch_x.to(self.device)
+                batch_y = batch_y.to(self.device)
+
+                self.optimizer.zero_grad()
+                logits = self.model(batch_x)
+                loss = self.criterion(logits, batch_y)
+                loss.backward()
+                self.optimizer.step()
 
     def predict(self, image: np.ndarray) -> int:
         """Predict 0 or 1 for a single 70x60 image."""
-        # TODO: flatten, tensor, forward, argmax, return int.
-        raise NotImplementedError
+        flattened = image.reshape(1, -1).astype(np.float32, copy=False)
+        x_tensor = torch.from_numpy(flattened).to(self.device)
+
+        self.model.eval()
+        with torch.no_grad():
+            logits = self.model(x_tensor)
+            return int(torch.argmax(logits, dim=1).item())
 
     def evaluate(self, images: np.ndarray, labels: np.ndarray) -> float:
         """Return classification accuracy on a batch of images."""
-        # TODO: vectorised eval in torch.no_grad() mode.
-        raise NotImplementedError
+        flattened = flatten_images(images).astype(np.float32, copy=False)
+        x_tensor = torch.from_numpy(flattened).to(self.device)
+        y_tensor = torch.from_numpy(labels.astype(np.int64, copy=False)).to(self.device)
+
+        self.model.eval()
+        with torch.no_grad():
+            logits = self.model(x_tensor)
+            predictions = torch.argmax(logits, dim=1)
+            accuracy = (predictions == y_tensor).float().mean().item()
+        return float(accuracy)
 
 
 def main(training_percent: int, num_iterations: int = 5) -> dict:
