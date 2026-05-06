@@ -1,0 +1,166 @@
+{
+  "scratch_digits": [
+    {
+      "training_percent": 10,
+      "mean_train_time": 0.16750655174255372,
+      "mean_error": 0.32199999999999995,
+      "std_error": 0.024478562049270763,
+      "mean_accuracy": 0.678,
+      "std_accuracy": 0.024478562049270763
+    },
+    {
+      "training_percent": 20,
+      "mean_train_time": 0.317978572845459,
+      "mean_error": 0.2306,
+      "std_error": 0.005986651818838312,
+      "mean_accuracy": 0.7694,
+      "std_accuracy": 0.005986651818838312
+    },
+    {
+      "training_percent": 30,
+      "mean_train_time": 0.47875494956970216,
+      "mean_error": 0.1912,
+      "std_error": 0.016216041440499564,
+      "mean_accuracy": 0.8088,
+      "std_accuracy": 0.016216041440499564
+    },
+    {
+      "training_percent": 40,
+      "mean_train_time": 0.7183948516845703,
+      "mean_error": 0.17760000000000004,
+      "std_error": 0.007088018058667747,
+      "mean_accuracy": 0.8224,
+      "std_accuracy": 0.007088018058667747
+    },
+    {
+      "training_percent": 50,
+      "mean_train_time": 0.8856272220611572,
+      "mean_error": 0.17420000000000002,
+      "std_error": 0.00941063228481485,
+      "mean_accuracy": 0.8257999999999999,
+      "std_accuracy": 0.00941063228481485
+    },
+    {
+      "training_percent": 60,
+      "mean_train_time": 1.0790739059448242,
+      "mean_error": 0.16000000000000003,
+      "std_error": 0.0035777087639996667,
+      "mean_accuracy": 0.8399999999999999,
+      "std_accuracy": 0.0035777087639996667
+    },
+    {
+      "training_percent": 70,
+      "mean_train_time": 1.2156980514526368,
+      "mean_error": 0.15180000000000002,
+      "std_error": 0.006823488843692799,
+      "mean_accuracy": 0.8482,
+      "std_accuracy": 0.006823488843692799
+    },
+    {
+      "training_percent": 80,
+      "mean_train_time": 1.4116582870483398,
+      "mean_error": 0.14700000000000002,
+      "std_error": 0.0067230945255886505,
+      "mean_accuracy": 0.8530000000000001,
+      "std_accuracy": 0.0067230945255886505
+    },
+    {
+      "training_percent": 90,
+      "mean_train_time": 1.5811490058898925,
+      "mean_error": 0.14200000000000002,
+      "std_error": 0.005176871642217918,
+      "mean_accuracy": 0.858,
+      "std_accuracy": 0.005176871642217918
+    },
+    {
+      "training_percent": 100,
+      "mean_train_time": 1.760160779953003,
+      "mean_error": 0.137,
+      "std_error": 0.007924645102463587,
+      "mean_accuracy": 0.8629999999999999,
+      "std_accuracy": 0.007924645102463587
+    }
+  ],
+  "scratch_faces": [
+    {
+      "training_percent": 10,
+      "mean_train_time": 0.10045223236083985,
+      "mean_error": 0.46266666666666667,
+      "std_error": 0.0308688984074406,
+      "mean_accuracy": 0.5373333333333333,
+      "std_accuracy": 0.0308688984074406
+    },
+    {
+      "training_percent": 20,
+      "mean_train_time": 0.16178970336914061,
+      "mean_error": 0.4613333333333333,
+      "std_error": 0.0398664437006028,
+      "mean_accuracy": 0.5386666666666666,
+      "std_accuracy": 0.03986644370060281
+    },
+    {
+      "training_percent": 30,
+      "mean_train_time": 0.26459789276123047,
+      "mean_error": 0.40933333333333327,
+      "std_error": 0.041654664938168814,
+      "mean_accuracy": 0.5906666666666667,
+      "std_accuracy": 0.041654664938168814
+    },
+    {
+      "training_percent": 40,
+      "mean_train_time": 0.32355175018310545,
+      "mean_error": 0.3826666666666666,
+      "std_error": 0.04891716354091769,
+      "mean_accuracy": 0.6173333333333333,
+      "std_accuracy": 0.04891716354091769
+    },
+    {
+      "training_percent": 50,
+      "mean_train_time": 0.4260554313659668,
+      "mean_error": 0.4079999999999999,
+      "std_error": 0.03512517299285198,
+      "mean_accuracy": 0.5920000000000001,
+      "std_accuracy": 0.03512517299285198
+    },
+    {
+      "training_percent": 60,
+      "mean_train_time": 0.5123485088348388,
+      "mean_error": 0.348,
+      "std_error": 0.050137588471901744,
+      "mean_accuracy": 0.6519999999999999,
+      "std_accuracy": 0.050137588471901744
+    },
+    {
+      "training_percent": 70,
+      "mean_train_time": 0.5431089878082276,
+      "mean_error": 0.34933333333333333,
+      "std_error": 0.025157283018817606,
+      "mean_accuracy": 0.6506666666666667,
+      "std_accuracy": 0.02515728301881761
+    },
+    {
+      "training_percent": 80,
+      "mean_train_time": 0.6484673023223877,
+      "mean_error": 0.33866666666666667,
+      "std_error": 0.027455013709298697,
+      "mean_accuracy": 0.6613333333333333,
+      "std_accuracy": 0.027455013709298697
+    },
+    {
+      "training_percent": 90,
+      "mean_train_time": 0.7425806522369385,
+      "mean_error": 0.31066666666666665,
+      "std_error": 0.04291593850514954,
+      "mean_accuracy": 0.6893333333333335,
+      "std_accuracy": 0.04291593850514954
+    },
+    {
+      "training_percent": 100,
+      "mean_train_time": 0.8113851070404052,
+      "mean_error": 0.3506666666666666,
+      "std_error": 0.0336253872344493,
+      "mean_accuracy": 0.6493333333333334,
+      "std_accuracy": 0.0336253872344493
+    }
+  ]
+}
