@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="620" viewBox="0 0 980 620">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#222}.title{font-size:26px;font-weight:700}.axis{font-size:16px}.tick{font-size:13px;fill:#444}.legend{font-size:15px}.grid{stroke:#e6e6e6;stroke-width:1}.axisline{stroke:#333;stroke-width:1.5}</style>
+<text class="title" x="490.0" y="36" text-anchor="middle">Digits: Training Time vs Training Fraction</text>
+<line class="grid" x1="92" y1="525.00" x2="760" y2="525.00"/>
+<text class="tick" x="80" y="529.00" text-anchor="end">0</text>
+<line class="grid" x1="92" y1="434.00" x2="760" y2="434.00"/>
+<text class="tick" x="80" y="438.00" text-anchor="end">2</text>
+<line class="grid" x1="92" y1="343.00" x2="760" y2="343.00"/>
+<text class="tick" x="80" y="347.00" text-anchor="end">4</text>
+<line class="grid" x1="92" y1="252.00" x2="760" y2="252.00"/>
+<text class="tick" x="80" y="256.00" text-anchor="end">6</text>
+<line class="grid" x1="92" y1="161.00" x2="760" y2="161.00"/>
+<text class="tick" x="80" y="165.00" text-anchor="end">8</text>
+<line class="grid" x1="92" y1="70.00" x2="760" y2="70.00"/>
+<text class="tick" x="80" y="74.00" text-anchor="end">10</text>
+<line class="grid" x1="92.00" y1="70" x2="92.00" y2="525"/>
+<text class="tick" x="92.00" y="553" text-anchor="middle">10</text>
+<line class="grid" x1="166.22" y1="70" x2="166.22" y2="525"/>
+<text class="tick" x="166.22" y="553" text-anchor="middle">20</text>
+<line class="grid" x1="240.44" y1="70" x2="240.44" y2="525"/>
+<text class="tick" x="240.44" y="553" text-anchor="middle">30</text>
+<line class="grid" x1="314.67" y1="70" x2="314.67" y2="525"/>
+<text class="tick" x="314.67" y="553" text-anchor="middle">40</text>
+<line class="grid" x1="388.89" y1="70" x2="388.89" y2="525"/>
+<text class="tick" x="388.89" y="553" text-anchor="middle">50</text>
+<line class="grid" x1="463.11" y1="70" x2="463.11" y2="525"/>
+<text class="tick" x="463.11" y="553" text-anchor="middle">60</text>
+<line class="grid" x1="537.33" y1="70" x2="537.33" y2="525"/>
+<text class="tick" x="537.33" y="553" text-anchor="middle">70</text>
+<line class="grid" x1="611.56" y1="70" x2="611.56" y2="525"/>
+<text class="tick" x="611.56" y="553" text-anchor="middle">80</text>
+<line class="grid" x1="685.78" y1="70" x2="685.78" y2="525"/>
+<text class="tick" x="685.78" y="553" text-anchor="middle">90</text>
+<line class="grid" x1="760.00" y1="70" x2="760.00" y2="525"/>
+<text class="tick" x="760.00" y="553" text-anchor="middle">100</text>
+<line class="axisline" x1="92" y1="525" x2="760" y2="525"/>
+<line class="axisline" x1="92" y1="70" x2="92" y2="525"/>
+<text class="axis" x="426.0" y="590" text-anchor="middle">Training Data Used (%)</text>
+<text class="axis" transform="translate(24 297.5) rotate(-90)" text-anchor="middle">Mean Training Time (seconds)</text>
+<polyline points="92.00,524.51 166.22,524.15 240.44,523.49 314.67,523.41 388.89,522.90 463.11,522.28 537.33,521.96 611.56,521.98 685.78,521.91 760.00,521.68" fill="none" stroke="#1f77b4" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="92.00" cy="524.51" r="4.5" fill="white" stroke="#1f77b4" stroke-width="2.5"/>
+<circle cx="166.22" cy="524.15" r="4.5" fill="white" stroke="#1f77b4" stroke-width="2.5"/>
+<circle cx="240.44" cy="523.49" r="4.5" fill="white" stroke="#1f77b4" stroke-width="2.5"/>
+<circle cx="314.67" cy="523.41" r="4.5" fill="white" stroke="#1f77b4" stroke-width="2.5"/>
+<circle cx="388.89" cy="522.90" r="4.5" fill="white" stroke="#1f77b4" stroke-width="2.5"/>
+<circle cx="463.11" cy="522.28" r="4.5" fill="white" stroke="#1f77b4" stroke-width="2.5"/>
+<circle cx="537.33" cy="521.96" r="4.5" fill="white" stroke="#1f77b4" stroke-width="2.5"/>
+<circle cx="611.56" cy="521.98" r="4.5" fill="white" stroke="#1f77b4" stroke-width="2.5"/>
+<circle cx="685.78" cy="521.91" r="4.5" fill="white" stroke="#1f77b4" stroke-width="2.5"/>
+<circle cx="760.00" cy="521.68" r="4.5" fill="white" stroke="#1f77b4" stroke-width="2.5"/>
+<polyline points="92.00,495.67 166.22,464.76 240.44,445.07 314.67,415.69 388.89,402.45 463.11,378.97 537.33,324.10 611.56,267.95 685.78,283.89 760.00,232.86" fill="none" stroke="#2ca02c" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="92.00" cy="495.67" r="4.5" fill="white" stroke="#2ca02c" stroke-width="2.5"/>
+<circle cx="166.22" cy="464.76" r="4.5" fill="white" stroke="#2ca02c" stroke-width="2.5"/>
+<circle cx="240.44" cy="445.07" r="4.5" fill="white" stroke="#2ca02c" stroke-width="2.5"/>
+<circle cx="314.67" cy="415.69" r="4.5" fill="white" stroke="#2ca02c" stroke-width="2.5"/>
+<circle cx="388.89" cy="402.45" r="4.5" fill="white" stroke="#2ca02c" stroke-width="2.5"/>
+<circle cx="463.11" cy="378.97" r="4.5" fill="white" stroke="#2ca02c" stroke-width="2.5"/>
+<circle cx="537.33" cy="324.10" r="4.5" fill="white" stroke="#2ca02c" stroke-width="2.5"/>
+<circle cx="611.56" cy="267.95" r="4.5" fill="white" stroke="#2ca02c" stroke-width="2.5"/>
+<circle cx="685.78" cy="283.89" r="4.5" fill="white" stroke="#2ca02c" stroke-width="2.5"/>
+<circle cx="760.00" cy="232.86" r="4.5" fill="white" stroke="#2ca02c" stroke-width="2.5"/>
+<polyline points="92.00,492.02 166.22,464.77 240.44,428.62 314.67,411.12 388.89,370.59 463.11,328.00 537.33,307.43 611.56,278.20 685.78,228.63 760.00,207.08" fill="none" stroke="#d62728" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="92.00" cy="492.02" r="4.5" fill="white" stroke="#d62728" stroke-width="2.5"/>
+<circle cx="166.22" cy="464.77" r="4.5" fill="white" stroke="#d62728" stroke-width="2.5"/>
+<circle cx="240.44" cy="428.62" r="4.5" fill="white" stroke="#d62728" stroke-width="2.5"/>
+<circle cx="314.67" cy="411.12" r="4.5" fill="white" stroke="#d62728" stroke-width="2.5"/>
+<circle cx="388.89" cy="370.59" r="4.5" fill="white" stroke="#d62728" stroke-width="2.5"/>
+<circle cx="463.11" cy="328.00" r="4.5" fill="white" stroke="#d62728" stroke-width="2.5"/>
+<circle cx="537.33" cy="307.43" r="4.5" fill="white" stroke="#d62728" stroke-width="2.5"/>
+<circle cx="611.56" cy="278.20" r="4.5" fill="white" stroke="#d62728" stroke-width="2.5"/>
+<circle cx="685.78" cy="228.63" r="4.5" fill="white" stroke="#d62728" stroke-width="2.5"/>
+<circle cx="760.00" cy="207.08" r="4.5" fill="white" stroke="#d62728" stroke-width="2.5"/>
+<line x1="798" y1="88" x2="832" y2="88" stroke="#1f77b4" stroke-width="3"/>
+<circle cx="815" cy="88" r="4" fill="white" stroke="#1f77b4" stroke-width="2"/>
+<text class="legend" x="844" y="93">Perceptron</text>
+<line x1="798" y1="118" x2="832" y2="118" stroke="#2ca02c" stroke-width="3"/>
+<circle cx="815" cy="118" r="4" fill="white" stroke="#2ca02c" stroke-width="2"/>
+<text class="legend" x="844" y="123">Scratch NN</text>
+<line x1="798" y1="148" x2="832" y2="148" stroke="#d62728" stroke-width="3"/>
+<circle cx="815" cy="148" r="4" fill="white" stroke="#d62728" stroke-width="2"/>
+<text class="legend" x="844" y="153">PyTorch NN</text>
+</svg>
